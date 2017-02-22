@@ -1,9 +1,0 @@
-/target/
-/.settings
-.classpath
-.project
-.DS_Store
-.idea
-/src/test/logger/img/*
-ease-core.iml
-
