@@ -3,6 +3,7 @@ package com.ads.steps;
 import org.junit.Assert;
 import org.openqa.selenium.TimeoutException;
 
+import com.ads.pages.HomePage;
 import com.ads.pages.LoginPage;
 import com.ads.utility.lib;
 
@@ -29,7 +30,7 @@ public class CommonSteps extends adsWebStep {
 	 */
 	public CommonSteps(BrowserDI driver) {
 		super(driver);
-
+		homeIndexPage = new HomePage(browser);
 	}
 
 	/**
@@ -55,7 +56,7 @@ public class CommonSteps extends adsWebStep {
 
 			loginPage.navigateUrl();
 
-			wallPage = loginPage.login(map.get(dataUserName).trim(), map.get(dataPassword).trim());
+			homeIndexPage = loginPage.login(map.get(dataUserName).trim(), map.get(dataPassword).trim());
 		}
 
 		catch (RuntimeException run) {
@@ -63,5 +64,6 @@ public class CommonSteps extends adsWebStep {
 		}
 
 	}
+
 
 }

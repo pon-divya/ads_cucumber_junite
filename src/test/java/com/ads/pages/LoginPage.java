@@ -13,7 +13,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.ads.pages.wallSummaryPage;
+import com.ads.pages.HomePage;
 import com.ads.steps.BrowserDI;
 import com.ads.utility.ConfigProperty;
 import com.ads.utility.lib;
@@ -35,11 +35,14 @@ public class LoginPage extends adsWebPage {
 	@FindBy(how = How.NAME, using = "btn-login")
 	public WebElement objloginButton;
 
-	@FindBy(how = How.CLASS_NAME, using = "btn-signup")
+	@FindBy(how = How.NAME, using = "btn-signup")
 	public WebElement objSignInButton;
 
 	@FindBy(how = How.CSS, using = "div.alert.alert-success")
 	public WebElement objWarningMessage;
+
+	@FindBy(how = How.CSS, using = "txtfname")
+	public WebElement objFirstName;
 
 	/** The workingdirectory. */
 	static String workingdirectory = System.getProperty("user.dir");
@@ -53,9 +56,13 @@ public class LoginPage extends adsWebPage {
 
 	public LoginPage(BrowserDI driver) {
 		super(driver);
-		// page = driver.Attest;
-		// PageHeader header = new PageHeader(AttestDriver Attes);
 	}
+
+	// public LoginPage(BrowserDI driver) {
+	// super(driver);
+	// page = driver.Attest;
+	// PageHeader header = new PageHeader(AttestDriver Attes);
+	// }
 
 	ConfigProperty Util = new ConfigProperty();
 	int flg;
@@ -117,7 +124,7 @@ public class LoginPage extends adsWebPage {
 
 	}
 
-	public wallSummaryPage login(String userName, String password) throws InterruptedException {
+	public HomePage login(String userName, String password) throws InterruptedException {
 
 		try {
 
@@ -134,18 +141,7 @@ public class LoginPage extends adsWebPage {
 			objPassword.clear();
 			objPassword.sendKeys(password);
 			objloginButton.click();
-			objSignInButton.click();
-			
-			lib.WaitUntilLoad(browser.findElement(By.name("post_feed")));
-			browserWait.until(new ExpectedCondition<Boolean>() {
-				@Override
-				public Boolean apply(WebDriver driver) {
-					return driver.getCurrentUrl().contains("home") && ((JavascriptExecutor) driver)
-							.executeScript("return document.readyState").equals("complete");
-				}
-			});
 
-			
 		} catch (TimeoutException e) {
 			System.out.println("##############log Start here############");
 			System.out.println(e);
@@ -156,7 +152,7 @@ public class LoginPage extends adsWebPage {
 			System.out.println(e);
 			System.out.println("##############log End here############");
 		}
-		return new wallSummaryPage(browser);
+		return new HomePage(browser);
 	}
 
 	public String checkWarningMessage() {
@@ -165,7 +161,11 @@ public class LoginPage extends adsWebPage {
 		return objWarningMessage.getText();
 	}
 
+	public SignInPage doClickSign() {
+		// TODO Auto-generated method stub
+		objSignInButton.click();
+		return new SignInPage(browser);
 
-	
+	}
 
 }

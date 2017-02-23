@@ -63,7 +63,6 @@ import io.appium.java_client.ios.IOSDriver;
  */
 public class BrowserDI extends EventFiringWebDriver {
 
-	/** The browser. */
 	public static WebDriver BROWSER = null;
 
 	/** The workingdirectory. */
@@ -177,7 +176,7 @@ public class BrowserDI extends EventFiringWebDriver {
 
 			// String execMode = map.get("execution_mode");
 
-			else if (execPlatform.equals("native")) {
+			if (execPlatform.equals("native")) {
 
 				switch (browser) {
 				case "chrome":

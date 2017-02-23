@@ -17,76 +17,76 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 90893308950,
+  "duration": 1056282584,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 16,
-  "name": "TS001_verify the Login page by clciking on the sign upbutton",
+  "line": 6,
+  "name": "TS001_verify the Login page",
   "description": "",
-  "id": "qbakbak-login-page;ts001-verify-the-login-page-by-clciking-on-the-sign-upbutton",
+  "id": "qbakbak-login-page;ts001-verify-the-login-page",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 15,
+      "line": 5,
       "name": "@regression2"
     },
     {
-      "line": 15,
+      "line": 5,
       "name": "@smoke2"
-    },
-    {
-      "line": 15,
-      "name": "@bvts2"
     }
   ]
 });
 formatter.step({
-  "line": 17,
-  "name": "Iam on the qbakbak login page",
+  "line": 7,
+  "name": "I am logged into the qbak Web Application with User name \"data_userName\" and Password \"data_defaultPwd\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 18,
-  "name": "I should be able to click on signup button",
-  "keyword": "When "
+  "line": 8,
+  "name": "I am on HomePage",
+  "keyword": "And "
 });
 formatter.step({
-  "line": 19,
-  "name": "verify iam on the Sign up page",
+  "line": 9,
+  "name": "Verify i am on Wall page",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginHappyPath.iam_on_the_qbkbak_login_page()"
+  "arguments": [
+    {
+      "val": "data_userName",
+      "offset": 58
+    },
+    {
+      "val": "data_defaultPwd",
+      "offset": 87
+    }
+  ],
+  "location": "CommonSteps.i_am_logged_into_the_qbak_Web_Application_with_User_name_and_Password(String,String)"
 });
 formatter.result({
-  "duration": 82674378677,
+  "duration": 1816773770,
   "status": "passed"
 });
 formatter.match({
-  "location": "LoginHappyPath.i_should_be_able_to_click_on_signup_button()"
+  "location": "HomeSteps.i_am_on_HomePage()"
 });
 formatter.result({
-  "duration": 30034737647,
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"class name\",\"selector\":\"btn-signup\"}\n  (Session info: chrome\u003d56.0.2924.87)\n  (Driver info: chromedriver\u003d2.24.417431 (9aea000394714d2fbb20850021f6204f2256b9cf),platform\u003dWindows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 30.03 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.0.1\u0027, revision: \u00271969d75\u0027, time: \u00272016-10-18 09:49:13 -0700\u0027\nSystem info: host: \u0027yuvi\u0027, ip: \u0027192.168.1.36\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_91\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.24.417431 (9aea000394714d2fbb20850021f6204f2256b9cf), userDataDir\u003dC:\\Users\\yuvi_007\\AppData\\Local\\Temp\\scoped_dir4476_12979}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d56.0.2924.87, platform\u003dXP, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 69ec9499802219dd720aebfa91a912d2\n*** Element info: {Using\u003dclass name, value\u003dbtn-signup}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:457)\r\n\tat org.openqa.selenium.By$ByClassName.findElement(By.java:391)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)\r\n\tat com.sun.proxy.$Proxy20.findElement(Unknown Source)\r\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy22.click(Unknown Source)\r\n\tat com.ads.steps.LoginHappyPath.i_should_be_able_to_click_on_signup_button(LoginHappyPath.java:58)\r\n\tat ✽.When I should be able to click on signup button(src/test/resources/features/login/login.feature:18)\r\n",
+  "duration": 30051791165,
+  "status": "passed"
+});
+formatter.match({
+  "location": "HomeSteps.verify_i_am_on_Wall_page()"
+});
+formatter.result({
+  "duration": 30031274596,
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"name\",\"selector\":\"post_feed\"}\n  (Session info: chrome\u003d56.0.2924.87)\n  (Driver info: chromedriver\u003d2.25.426935 (820a95b0b81d33e42712f9198c215f703412e1a1),platform\u003dMac OS X 10.11.6 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 30.03 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.0.1\u0027, revision: \u00271969d75\u0027, time: \u00272016-10-18 09:49:13 -0700\u0027\nSystem info: host: \u0027f45c89a5528f\u0027, ip: \u0027127.0.0.1\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.11.6\u0027, java.version: \u00271.8.0_74\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.25.426935 (820a95b0b81d33e42712f9198c215f703412e1a1), userDataDir\u003d/var/folders/82/2yzv_r3131j7j4d1lbyz3scj08bvzd/T/.org.chromium.Chromium.bOS4J6}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d56.0.2924.87, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: c9a2e572fa04a6d0c4cabef35cc02720\n*** Element info: {Using\u003dname, value\u003dpost_feed}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:449)\n\tat org.openqa.selenium.By$ByName.findElement(By.java:303)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)\n\tat com.sun.proxy.$Proxy21.findElement(Unknown Source)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy23.isDisplayed(Unknown Source)\n\tat com.ads.pages.HomePage.isCheckHome(HomePage.java:51)\n\tat com.ads.steps.HomeSteps.verify_i_am_on_Wall_page(HomeSteps.java:32)\n\tat ✽.Then Verify i am on Wall page(src/test/resources/features/login/login.feature:9)\n",
   "status": "failed"
 });
-formatter.match({
-  "location": "LoginHappyPath.verify_iam_on_the_Sign_up_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
 formatter.after({
-  "duration": 452943,
-  "status": "passed"
-});
-});{
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 599137,
+  "duration": 138503,
   "status": "passed"
 });
 });

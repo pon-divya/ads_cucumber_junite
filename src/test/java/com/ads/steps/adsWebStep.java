@@ -21,9 +21,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.ads.pages.wallSummaryPage;
+import com.ads.pages.HomePage;
 import com.ads.runnerTest.login;
 import com.ads.pages.LoginPage;
+import com.ads.pages.SignInPage;
 import com.ads.utility.ConfigServer;
 import com.ads.utility.Logger;
 
@@ -33,44 +34,40 @@ public class adsWebStep {
 	protected String csqURL;
 	protected String mfaURL;
 	protected LoginPage loginPage;
-	protected wallSummaryPage wallPage;
-	protected LoginPage SignupPage;
+	protected HomePage homeIndexPage;
+	protected SignInPage SignupPage;
 
-	
-
-	
 	// public HashMap<String, String> map = new HashMap<String, String>();
 	public Map<String, String> test = new HashMap<String, String>();
-	    
 
 	public Map<String, String> map = new HashMap<String, String>();
 
 	static String workingdirectory = System.getProperty("user.dir");
 	// This defines the wait that needs to be used for explicit wait
 	protected WebDriverWait browserWait;
-	
+
 	/**
 	 * Instantiates a new ease web step.
 	 *
 	 * @param driver
 	 *            the driver
 	 */
-	  Actions action;
-	    
-	    List<String> accountRefIds = new ArrayList<String>();
-	    
-	    
+	Actions action;
+
+	List<String> accountRefIds = new ArrayList<String>();
+
 	public adsWebStep(BrowserDI driver) {
-		 
+
 		adsWebStep.browser = driver;
-		
+
 		this.browser = driver;
 		browser.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		loginPage = new LoginPage(browser);
+		homeIndexPage = new HomePage(browser);
 
 		browserWait = new WebDriverWait(browser, 30);
-		
+
 		/**
 		 * Instantiates a new ease web step.
 		 * 
@@ -79,19 +76,20 @@ public class adsWebStep {
 		 *            path name
 		 * 
 		 */
-		
-		
-		
-//		if (BrowserDI.map == null || BrowserDI.map.size() <= 0 || BrowserDI.map.isEmpty()) {
-//			System.out.println("Executed");
-//			getpropertiesValue();
-//		}
+
+		// if (BrowserDI.map == null || BrowserDI.map.size() <= 0 ||
+		// BrowserDI.map.isEmpty()) {
+		// System.out.println("Executed");
+		// getpropertiesValue();
+		// }
 
 		List<String> fileList = new ArrayList<String>();
 		if (ConfigServer.getValue("skip") == null) {
 			if (ConfigServer.getValue("xmlexecuted") == null) {
-				//fileList.add(workingdirectory + "/src/test/resources/TestData/TestData.xml");
-				//fileList.add(workingdirectory + "/ease-core_ParmSetting.xml");
+				// fileList.add(workingdirectory +
+				// "/src/test/resources/TestData/TestData.xml");
+				// fileList.add(workingdirectory +
+				// "/ease-core_ParmSetting.xml");
 			}
 
 		}
@@ -102,19 +100,19 @@ public class adsWebStep {
 			map = ConfigServer.getValues();
 		}
 		setMap();
-		
-		 action = new Actions(driver);
-	        accountRefIds.add(map.get("data_ref1"));
-	        accountRefIds.add("9u1SfGt55dLR22urD+20UJ/qPS1Aq7BufmeWiLFOZfp70DGaSVOHmaQw72UxJy39");
+
+		action = new Actions(driver);
+		accountRefIds.add(map.get("data_ref1"));
+		accountRefIds.add("9u1SfGt55dLR22urD+20UJ/qPS1Aq7BufmeWiLFOZfp70DGaSVOHmaQw72UxJy39");
 
 	}
-	//Populating instance variable through static access of a static variable of a Static attribute.
-	public  void setMap(){
-		this.map =  BrowserDI.map;
-		this.test =  BrowserDI.dynamicMap;
+
+	// Populating instance variable through static access of a static variable
+	// of a Static attribute.
+	public void setMap() {
+		this.map = BrowserDI.map;
+		this.test = BrowserDI.dynamicMap;
 	}
-	
-	
 
 	/**
 	 * parsing the given xml and updating to map
@@ -289,6 +287,7 @@ public class adsWebStep {
 		}
 
 	}
+
 	public static void setMakdir() {
 
 		File setF = new File(workingdirectory + "/src/test/log/" + "log");
@@ -301,8 +300,5 @@ public class adsWebStep {
 		} catch (Exception e) {
 		}
 	}
-	
-	
-    
 
 }
